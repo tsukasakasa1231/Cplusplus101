@@ -7,7 +7,7 @@ Please check https://github.com/tsukasakasa1231/Cplusplus101/blob/master/midterm
 
 SAMPLE INPUT:
 
-9 200 30 15   
+9 200 30 15     
 10 20 30 40 50 60 70 80 90   
 90 90 90 90 90 90 90 90 90   
 7 -1 -1 8 15 23 18 -1   
