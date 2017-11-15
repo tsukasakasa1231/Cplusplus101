@@ -75,8 +75,19 @@ int main()
     int cost[1000]={0};             //cost
     int graph[500][500]={{0}};      //adjacency matrix representation of the graph
     int s[500][500]={0};            // shortest path array
-
+    
+    float score_c = 0;
+    float score_s = 0;
+    int cover[500][500] = {0}; // 記錄若蓋某村莊有無覆蓋其它村莊
+    int satisfy[500][500] = {0};// 記錄若蓋在某村有無滿足他村
+    int choose[500] = {0}; 
+    int elecov[500] = {0}; // 某村有無被覆蓋
+    int elesat[500] = {0};// 某村有無被滿足
+    int stop = 0;
+    
     cin>>n>>B>>t1>>t2;
+    
+    
 
 
     for(int i=0;i<n;i++)
@@ -104,16 +115,65 @@ int main()
         dijkstra(graph, i,n,s);
     }
 
-    for(int i=0;i<n;i++)
+//     for(int i=0;i<n;i++)
+//     {
+//         for(int j=0;j<n;j++)
+//         {
+//             cout<<s[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+    
+
+    for(int i = 0; i < n; i++)
     {
-        for(int j=0;j<n;j++)
-        {
-            cout<<s[i][j]<<" ";
+        for(int j = 0; j < n; j++)
+        {   
+            if(s[i][j] <= t1)
+                cover[i][j] = 1;
+            if(s[i][j] <= t2)
+                satisfy[i][j] = 1;
         }
-        cout<<endl;
     }
+    
+    while(stop != n)
+    {
+        float min = 10001;
+        int k = 0;
+        for(int i = 0; i < n; i++)
+        {
+            if(choose[i] != 1)
+            {
+                score_c = score_cover(elecov, cost[i], cover[i], n);
+                if(min > score_c)
+                {
+                    min = score_c;
+                    k = i;
+                }
+            }
+        }
+        choose[k] = 1;
+        cout << k << " ";
+        for(int i = 0; i < n; i++)
+        {
+            if(cover[k][i] == 1)
+            {
+                elecov[i] = 1;
+            }
+            if(satisfy[k][i] == 1)
+            {
+                elesat[i] = 1;
+            }
+        }
+        stop = 0;
+        for(int i = 0; i < n; i++)
+        {
+            if(elecov[i] == 1)
+                stop++;
 
-
+        }
+        
+    }
 
     return 0;
 }
