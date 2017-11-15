@@ -4,12 +4,6 @@
 
 using namespace std;
 
-// A C++ program for Dijkstra's single source shortest path algorithm.
-// The program is for adjacency matrix representation of the graph
-
-
-
-// Number of vertices in the graph
 
 // A utility function to find the vertex with minimum distance value, from
 // the set of vertices not yet included in shortest path tree
@@ -71,7 +65,7 @@ void dijkstra(int graph[][500], int src,int V,int s[][500])
                 dist[v] = dist[u] + graph[u][v];
     }
 
-    // print the constructed distance array
+    // assigned the constructed distance array to the shortest path array
     for(int i=0;i<V;i++)
     {
         s[src][i]=dist[i];
@@ -83,11 +77,11 @@ void dijkstra(int graph[][500], int src,int V,int s[][500])
 
 int main()
 {
-    int n,B,t1,t2;
-    int population[1000]={0};
-    int cost[1000]={0};
-    int graph[500][500]={{0}};
-    int s[500][500]={0};
+    int n,B,t1,t2;                  //n=#oftown, B=budget, t1=included_time, t2=satified_time
+    int population[1000]={0};       //town population
+    int cost[1000]={0};             //cost
+    int graph[500][500]={{0}};      //adjacency matrix representation of the graph
+    int s[500][500]={0};            // shortest path array
 
     cin>>n>>B>>t1>>t2;
 
