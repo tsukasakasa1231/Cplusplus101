@@ -1,3 +1,3 @@
 THIS FOLDER IS FOR PD MIDTERM.
 
-Please check Cplusplus101/midterm/PD106-1_midterm.pdf
+Please check https://github.com/tsukasakasa1231/Cplusplus101/blob/master/midterm/PD106-1_midterm.pdf
