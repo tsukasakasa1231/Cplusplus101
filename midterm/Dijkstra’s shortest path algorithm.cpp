@@ -19,13 +19,6 @@ int minDistance(int dist[], bool sptSet[], int V)
     return min_index;
 }
 
-// A utility function to print the constructed distance array
-int printSolution(int dist[], int n,int V)
-{
-    printf("Vertex   Distance from Source\n");
-    for (int i = 0; i < V; i++)
-        printf("%d tt %d\n", i, dist[i]);
-}
 
 // Funtion that implements Dijkstra's single source shortest path algorithm
 // for a graph represented using adjacency matrix representation
