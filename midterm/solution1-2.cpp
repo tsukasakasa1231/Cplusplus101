@@ -1,3 +1,5 @@
+// version 2017/11/15 彥中 included and satisfied
+
 #include <iostream>
 #include <cstdio>
 #include <limits.h>
