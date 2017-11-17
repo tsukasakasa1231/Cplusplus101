@@ -1,3 +1,5 @@
+// 62.827751889379	2017-11-17 22:29:47
+
 #include <iostream>
 #include <cstdio>
 #include <limits.h>
